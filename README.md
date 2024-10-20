@@ -1,3 +1,4 @@
 # dots
+branch for raspberry pi dotfiles
 
-My Hyprland config
+This doesn't use hyprland and waybar but rather berrywm and lemonbar

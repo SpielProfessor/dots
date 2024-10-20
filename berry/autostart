@@ -1,0 +1,39 @@
+#!/bin/bash
+
+
+# Set decoration geometry
+berryc border_width       0
+berryc inner_border_width 0
+berryc title_height       30
+berryc top_gap            30
+
+# Set decoration colors
+berryc focus_color         834b55
+berryc unfocus_color       1e2326
+berryc inner_focus_color   83c092 
+berryc inner_unfocus_color 1e2326
+berryc text_focus_color    384b55
+berryc text_unfocus_color  d3c6aa
+
+# Other options
+berryc smart_place "true"
+berryc draw_text   "true"
+berryc edge_lock   "true"
+berryc set_font    "Dina-9"
+
+# autostart applications
+
+# processes giving back control
+nitrogen --restore                      # wallpaper
+
+# always-running processes
+dunst &                                 # notifications
+jgmenu --at-pointer &                   # right-click menu
+
+# lemonbar config
+~/.config/berry/lemonbar.sh | lemonbar -p -g2550x25+5+5 -B#1e2326 -F#d3c6aa | bash & 
+
+
+sxhkd -c ~/.config/berry/sxhkdrc &      # keyboard shortcuts
+picom --corner-radius 10                # compositor
+

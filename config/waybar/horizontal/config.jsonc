@@ -1,0 +1,227 @@
+// -*- mode: jsonc -*-
+/*  _    _             _                
+ * | |  | |           | |               
+ * | |  | | __ _ _   _| |__   __ _ _ __ 
+ * | |/\| |/ _` | | | | '_ \ / _` | '__|
+ * \  /\  / (_| | |_| | |_) | (_| | |   
+ *  \/  \/ \__,_|\__, |_.__/ \__,_|_|   
+ *                __/ |                 
+ *               |___/                  
+ * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ *  My configuration for WayBar
+ *  This is only half of the config,
+ *  the styling part is located in the
+ *  file `style.css`
+ */
+
+
+
+/*****************
+* M A I N  B A R *
+*****************/
+{
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 24, // Waybar height (to be removed for auto height)
+  //"width": 1280, // Waybar width
+  "spacing": 0, // Gaps between modules (4px)
+  "margin-left": 5,
+  "margin-right":5,
+  "margin-top":5,
+  "margin-bottom":0,
+
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+    "hyprland/submap"
+  ],
+  "modules-center": [
+    "wlr/taskbar" 
+  ],
+  "modules-right": [
+    "custom/weather",
+    "mpris",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "privacy",
+    "keyboard-state",
+    "tray",
+    "bluetooth",
+    "pulseaudio",
+    "custom/notification",
+    "battery",
+    "clock",
+    "group/group-power"
+  ],
+
+/****************
+* M O D U L E S *
+****************/
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
+  "mpris": {
+	"format": "{player_icon} {title} [{position}/{length}]",
+	"title-len":10,
+	"artist-len":0,
+	"album-len":0,
+	"format-paused": "{status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	//"ignored-players": ["firefox"]
+  }, 
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂰",
+    "format-connected-battery": "󰥈: {device_battery_percentage}%",
+    "on-click": "flatpak run io.github.kaii_lb.Overskride",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 10,
+    }
+  },
+  "clock": {
+    "format-alt": "{:%H:%M}",
+    "format": "{:%d.%m.%y,%H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "wlr/taskbar": {
+    "on-click": "activate",
+    "icon-size": 12,
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing":5,
+    "show-passive-icons": true,
+  },
+  "pulseaudio": {
+    "format": "🔊{volume}",
+    "on-click": "pavucontrol",
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": {
+        "numlock": "N{icon}",
+        "capslock": "C{icon}"                                                                                                                                                       
+    },
+    "format-icons": {
+        "locked": "",
+        "unlocked": ""
+    }
+},
+// notification centre
+  "custom/notification": {
+    "tooltip": false,
+    "format": " {icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  // weather
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot",
+    ]
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit"
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "rewrite": {
+    }
+
+  }
+} 

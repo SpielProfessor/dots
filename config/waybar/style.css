@@ -1,0 +1,232 @@
+@import url("colours/current.css");
+/*global styling*/
+* {
+  font-family: Cascadia Code;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+/*main bar*/
+window#waybar {
+  background-color: @bg;
+  color: @fg;
+  border-radius: 5px;
+}
+
+/*workspaces*/
+#workspaces {
+  background: @bg-green;
+  border-radius:5px;
+  margin-right: 5px;
+  padding-right: 2px;
+}
+#workspaces button {
+  padding: 0 0px;
+}
+#workspaces button.active {
+  background: @green;
+  color: @bg;
+  border-radius:5px;
+}
+
+/*clock*/
+#clock {
+
+  background: @bg-vis;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+
+/*task bar*/
+#taskbar {
+  background: @bg-vis;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 0 0px;
+}
+
+#taskbar button {
+  padding-left: 5px;
+  padding-right: 1px;
+  padding-top: 0px;
+  padding-bottom:0px;
+  border-radius: 5px;
+}
+
+#taskbar button.active {
+  background: @green;
+  border-radius: 5px;
+}
+
+/*System tray*/
+#tray {
+  background: @bg-vis;
+  border-radius: 5px;
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*Audio module*/
+#pulseaudio {
+  background: @bg-vis;
+  border-radius: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+
+/*Caps & Num lock indicator*/
+#keyboard-state {
+/*  background: @bg-vis;*/
+  margin: 0px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#keyboard-state label.locked {
+  background: @red;
+  border-radius: 5px;
+  color: @bg;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#power-profiles-daemon {
+  font-size: 20px;
+  border-top-left-radius:0px;
+  border-bottom-left-radius:0px;
+}
+#idle_inhibitor {
+  margin-left: 5px;
+  font-size: 20px;
+  background: @bg-green;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+tooltip {
+  background: @bg;
+  border-radius: 5px;
+}
+tooltip label {
+}
+
+#custom-notification {
+  padding-left: 5px;
+  padding-right: 5px;
+  background: @bg-green;
+}
+
+
+#power-profiles-daemon {
+  background: @bg-green;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#power-profiles-daemon.performance {
+  background: @red;
+  color: @bg;
+}
+#power-profiles-daemon.power-saver {
+  background: @green;
+  color: @bg;
+}
+#bluetooth {
+  border-radius: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+#bluetooth.disabled {
+  color: @bg;
+  background: @red;
+}
+#bluetooth.connected {
+  color: @bg;
+  background: @green;
+
+}
+#battery {
+  margin-left: 5px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#battery.full {
+  color: @bg;
+  background: @aqua;
+}
+#battery.discharging {
+  color: @bg;
+  background: @red;
+}
+#battery.charging {
+  color: @bg;
+  background: @green;
+}
+
+#custom-weather {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: @bg-green
+}
+
+
+
+#custom-quit {
+  background-color: @aqua;
+  color: @bg;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+#custom-lock {
+  background-color: @green;
+  color: @bg;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+  border-radius: 0px;
+}
+#custom-reboot {
+  background-color: @bg-green;
+  color: @fg;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+#custom-power {
+  background-color: @red;
+  color: @bg;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+}
+#submap {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: @fg;
+  color: @bg;
+}

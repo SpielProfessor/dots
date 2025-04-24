@@ -1,0 +1,117 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+
+# plugin manager
+"rocks.nvim" = "2.44.0"
+"rocks-git.nvim" = "2.5.3"
+"rocks-lazy.nvim" = "1.2.0"
+
+
+# LSPs
+"lspsaga.nvim" = "scm"
+"nvim-lspconfig" = "2.0.0"
+"indent-blankline.nvim" = "3.9.0"
+
+# treesitter
+"rocks-treesitter.nvim" = "1.3.0"
+"tree-sitter-toml" = "0.0.31"
+
+# dependencies
+"nvim-web-devicons" = "0.100"
+
+# miscellaneous
+"code_runner.nvim" = "scm"
+"mini.nvim" = "0.15.0"
+"lualine.nvim" = "scm"
+"nvim-tree.lua" = "1.6.0"
+"trouble.nvim" = "3.7.1"
+"todo-comments.nvim" = "1.4.0"
+"conform.nvim" = "9.0.0"
+"tree-sitter-json" = "0.0.36"
+"nvim-treesitter-context" = "scm"
+"rocks-config.nvim" = "3.1.0"
+"tree-sitter-diff" = "0.0.32"
+"tree-sitter-make" = "0.0.30"
+"tree-sitter-asm" = "0.0.31"
+"tree-sitter-css" = "0.0.37"
+"tree-sitter-jsonc" = "0.0.29"
+"tree-sitter-rust" = "0.0.50"
+"tree-sitter-yaml" = "0.0.34"
+"tree-sitter-bash" = "0.0.40"
+"tree-sitter-fish" = "0.0.30"
+"tree-sitter-ini" = "0.0.30"
+"nvim-cmp" = "scm"
+"cmp-nvim-lsp" = "scm"
+"luasnip" = "2.3.0"
+nvim-autopairs = "scm"
+"lsp_signature.nvim" = "0.3.1"
+"lspkind.nvim" = "scm"
+"ccc.nvim" = "2.0.3"
+cmp-buffer = "scm"
+"venn.nvim" = "scm"
+neorg = "9.3.0"
+tree-sitter-norg = "0.2.6"
+"obsidian.nvim" = "3.10.0"
+"plenary.nvim" = "0.1.4"
+"telescope.nvim" = "scm"
+"which-key.nvim" = "3.17.0"
+"gen.nvim" = "scm"
+"lush.nvim" = "scm"
+"gruvbox.nvim" = "2.0.0"
+"rocks-dev.nvim" = "1.7.0"
+tree-sitter-d = "0.0.33"
+tree-sitter-cpp = "0.0.41"
+
+# tab bar
+[plugins."barbar.nvim"]
+git = "romgrk/barbar.nvim"
+rev = "v1.9.1"
+
+[plugins."betterterm.nvim"]
+git = "crag666/betterterm.nvim"
+rev = "5d3f41d9e8b3553d49764906a14e45a08dbe2308"
+
+[plugins.everforest-nvim]
+git = "neanias/everforest-nvim"
+rev = "99e161dd0aceaef42dc66ef6bb6cec1164a43442"
+
+[plugins.cmp-calc]
+git = "hrsh7th/cmp-calc"
+rev = "5947b412da67306c5b68698a02a846760059be2e"
+
+[plugins."crates.nvim"]
+git = "Saecki/crates.nvim"
+rev = "v0.6.0"
+
+[plugins.cmp-nerdfont]
+git = "chrisgrieser/cmp-nerdfont"
+rev = "e97482344ebed29093015a18c155057adf5c842b"
+
+[plugins.nvim-treesitter]
+git = "nvim-treesitter/nvim-treesitter"
+rev = "v0.9.3"
+
+[plugins."gruvbox-material.nvim"]
+git = "f4z3r/gruvbox-material.nvim"
+rev = "v1.6.0"
+
+
+#[plugins.vim-visual-multi]
+#git = "mg979/vim-visual-multi"
+#rev = "v0.5.8"
+
+
+# treesitter config
+[treesitter]
+auto_highlight = "all"

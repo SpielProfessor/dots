@@ -1,0 +1,11 @@
+/*VARIABLES*/
+@define-color bg-green  #3c4841;  /*special background (e.g. time)*/
+@define-color bg-blue   #384b55;
+@define-color bg-red    #4c374a;
+@define-color bg-vis    #493b40;
+@define-color bg        #282828;
+@define-color aqua      #83c092;  /*focused special background (e.g. current workspace)*/
+@define-color red       #e67e80;
+@define-color blue      #7fbbb3;
+@define-color green     #a7c080;
+@define-color fg        #ebdbb2;
